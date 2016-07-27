@@ -5,11 +5,18 @@ Contractor dashboard is an electron app designed to ease a contractor's routine 
 
 ## Requirements
 - Ubuntu / MacOS / Windows 10 with bash
+- Google Client ID (from Google Console API)
+- Google Client secret (from Google Console API)
 
 ## Installation
 - Clone the repo
 - Run `npm install` in the project's directory
 - Use `npm start` to start the application
+
+## Configuration
+- You'll need a Client ID and secret from an app created with Google Console API.
+The steps to create one are detailed in the screenshot below:
+![alt Steps](https://github.com/efidiles/contractor-dashboard/raw/docs/steps.jpg)
 
 ## Main technologies
 - React
