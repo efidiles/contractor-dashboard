@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.panel {
+  width: 33.33%;
+  min-width: 350px;
+  padding: 8px 20px 20px;
+}

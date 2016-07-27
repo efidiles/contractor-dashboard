@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+require('dotenv').config();
+
+process.env.LOG_LEVEL = process.env.LOG_LEVEL || 'warn';
+process.env.LOG_CONFIG_FILE = process.env.LOG_CONFIG_FILE || 'logger.conf.json';
+
+if (!process.env.NODE_ENV) {
+  throw new Error('Environment not set. Please configure the NODE_ENV variable');
+}
+
+if (!process.env.API_PORT) {
+  throw new Error('App port not set. Please configure the APP_PORT variable');
+}
+
+if (!process.env.APP_URL) {
+  throw new Error('App url not set. Please configure the APP_URL variable');
+}
+
+const http = require('http');
+
+const appFactory = require('../src/index');
+const logger = require('../src/decorators/logger')('From start container');
+
+logger.trace('process.env.NODE_ENV', process.env.NODE_ENV);
+logger.trace('process.env.API_PORT', process.env.API_PORT);
+
+const port = parseInt(process.env.API_PORT, 10);
+
+function startApplication(createApp) {
+  logger.info('Starting the application.');
+
+  const app = createApp();
+  app.set('port', port);
+
+  const server = http.createServer(app);
+
+  // notify parent process that the api has started
+  server.listen(port, () => {
+    if (process.send) {
+      process.send('started');
+    }
+  });
+}
+
+process.once('SIGTERM', () => {
+  logger.info('Parent process closed. Exiting...');
+  process.exit(0);
+});
+
+startApplication(appFactory);

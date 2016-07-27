@@ -1,0 +1,8 @@
+{
+	"source": "./src/client/",
+	"destination": "./docs/",
+	"includes": ["\\.(js)$"],
+	"access": ["public", "protected", "private"],
+	"autoPrivate": false,
+	"undocumentIdentifier": true
+}

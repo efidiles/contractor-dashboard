@@ -1,0 +1,28 @@
+.root {
+  padding: 1.5em;
+  z-index: 1;
+  position: relative;
+  background-color: #ffefef;
+}
+
+.content {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+  list-style-type: none;
+  color: #c10000;
+  text-align: center;
+}
+
+.danger {
+  background-color: #ffefef;
+}
+
+.warn {
+  background-color: #feffef;
+}
+
+.success {
+  background-color: #effff6;
+}

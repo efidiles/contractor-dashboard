@@ -1,0 +1,79 @@
+{
+  "name": "contractor-dashboard-api",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=6.2.0"
+  },
+  "config": {
+    "dev": {
+      "env": "development",
+      "port": "8066"
+    },
+    "prod": {
+      "env": "production"
+    }
+  },
+  "scripts": {
+    "help": "npm-scripts-info",
+    "start": "pm2 start process.json",
+    "start:dev": "NODE_ENV=$npm_package_config_dev_env API_PORT=$npm_package_config_dev_port LOG_LEVEL='trace' npm start",
+    "debug": "NODE_ENV=$npm_package_config_dev_env API_PORT=$npm_package_config_dev_port iron-node LOG_LEVEL='trace' ./bin/start",
+    "test": "mocha ./test/**/*$MATCH*.spec.js",
+    "test:coverage": "istanbul cover node_modules/mocha/bin/_mocha ./test/**/*.spec.js",
+    "test:debug": "NODE_ENV=$npm_package_config_dev_env API_PORT=$npm_package_config_dev_port LOG_LEVEL='debug' iron-node node_modules/mocha/bin/_mocha ./test/**/*$MATCH*.spec.js",
+    "outdated": "ncu",
+    "docs": "esdoc -c esdoc.json",
+    "restart": "pm2 restart process.json",
+    "stop": "pm2 delete process.json",
+    "logs": "pm2 logs"
+  },
+  "scripts-help": {
+    "?start:dev": "echo NODE_ENV=$npm_package_config_dev_env API_PORT=$npm_package_config_dev_port node ./bin/start",
+    "?debug": "echo NODE_ENV=$npm_package_config_dev_env API_PORT=$npm_package_config_dev_port iron-node ./bin/start",
+    "?test:coverage": "echo istanbul cover node_modules/mocha/bin/_mocha ./test/**/*.spec.js",
+    "?test:debug": "echo NODE_ENV=$npm_package_config_dev_env API_PORT=$npm_package_config_dev_port iron-node node_modules/mocha/bin/_mocha ./test/**/*$MATCH*.spec.js",
+    "?outdated": "echo ncu",
+    "?docs": "echo esdoc -c esdoc.json"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.15.0",
+    "compression": "^1.6.1",
+    "debug": "~2.2.0",
+    "dotenv": "^2.0.0",
+    "electrolyte": "^0.2.0",
+    "express": "~4.13.4",
+    "express-limiter": "^1.6.0",
+    "googleapis": "^7.0.0",
+    "http-auth": "^2.2.8",
+    "jsonfile": "^2.2.3",
+    "jsonwebtoken": "^7.0.0",
+    "lodash": "^4.6.1",
+    "log4js": "^0.6.36",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.11.2",
+    "multer": "^1.1.0",
+    "nodemailer": "^2.3.0",
+    "pm2": "^1.1.3",
+    "rimraf": "^2.5.2",
+    "validator": "^5.1.0",
+    "xoauth2": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "es6-promisify": "^4.1.0",
+    "gulp": "^3.9.1",
+    "iron-node": "^3.0.4",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "nock": "^8.0.0",
+    "node-mocks-http": "^1.5.1",
+    "nodemon": "^1.9.1",
+    "npm-check-updates": "^2.5.8",
+    "npm-scripts-info": "^0.3.6",
+    "proxyquire": "^1.7.4",
+    "sinon": "^1.17.3",
+    "supertest": "^1.2.0"
+  }
+}

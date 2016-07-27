@@ -1,0 +1,16 @@
+{
+	"extends": "airbnb",
+
+	"parser": "babel-eslint",
+
+	"rules": {
+		"default-case": 0,
+		"no-unused-vars": [1, { "vars": "local", "args": "none" }],
+
+		"arrow-parens": [2, "as-needed"],
+		"comma-dangle": [1, "never"],
+
+		"new-cap": 0,
+		"no-underscore-dangle": 0
+	}
+}

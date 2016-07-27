@@ -1,0 +1,21 @@
+.root {
+  padding: 3rem 20px;
+  background: #fff;
+  z-index: 1;
+  position: relative;
+
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  font-size: 3rem;
+  color: gray;
+  cursor: pointer;
+}
+
+.content {
+  max-width: 640px;
+  margin: 0 auto;
+}

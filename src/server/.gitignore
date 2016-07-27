@@ -1,13 +1,9 @@
-.idea/
-.vscode/
-
 node_modules/
 dist/
 dev/
 *.local.*
 *.log
+.idea/
 coverage/
 docs/
-/webpack.stats.json
-/.npmrc
 .env

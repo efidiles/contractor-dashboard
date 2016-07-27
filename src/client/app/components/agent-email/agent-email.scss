@@ -1,0 +1,36 @@
+.root {
+  position: relative;
+}
+
+.title {
+  float: left;
+}
+
+.menu {
+  position: absolute;
+  right: -1em;
+  top: -1em;
+  padding: 1em;
+  margin-top: 1em;
+  color: #000;
+  opacity: .2;
+}
+
+.dropzone {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  text-align: center;
+  background-color: #FBFBFB;
+  font-size: 1rem;
+}
+
+.dropzoneIcon {
+  width: 3em;
+  height: 3em;
+  opacity: .5;
+}
+
+.bottomButton {
+  width: 100%;
+}

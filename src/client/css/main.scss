@@ -1,0 +1,73 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: 'Bariol';
+  src: url('../fonts/bariol-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Bariol';
+  font-size: 1.2em;
+  color: #616E80;
+  font-smoothing: subpixel-antialiased;
+  -moz-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+}
+
+main {
+  padding: 15px;
+}
+
+@-webkit-keyframes "loading" {
+ from { left: 0; }
+ to { left: 100%; }
+}
+
+@keyframes "loading" {
+ from { left: 0; }
+ to { left: 100%; }
+}
+
+h3,
+h5 {
+  margin-bottom: 0;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #DEDEDE;
+}
+
+button {
+  background: none;
+  border: none;
+  line-height: 1;
+  padding: 0;
+
+  svg {
+    display: block;
+  }
+}
+
+.removeWrapper {
+  text-align: center;
+}
+
+.bottomButton {
+  width: 100%;
+}
+
+.dropzone {
+  margin: 8px 0 0;
+}
